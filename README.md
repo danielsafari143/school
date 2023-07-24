@@ -33,8 +33,9 @@
 
 # 📖 DECODE MORSE <a name="about-project"></a>
 
+This project is a school library management system that allows students and teachers to borrow and return books. It is implemented in Ruby and uses object-oriented programming principles.
 
-During your vacation at the seaside, time after time you find old bottles with parchment inside. Out of curiosity, you look into the next bottle and see that there is a message written in Morse code. Your curiosity grows even more - maybe you just found the lost treasure of the pirates! However, you are getting tired of decrypting messages manually. Fortunately, you can program in Ruby and you can help yourself by automating this process.
+The system has three main classes: Person, Student, and Teacher. The Person class is the parent class of the other two classes. The Student class has an additional attribute, classroom, and the Teacher class has an additional attribute, speacilization.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -46,11 +47,9 @@ During your vacation at the seaside, time after time you find old bottles with p
 
 ### Key Features <a name="key-features"></a>
 
--Create a method to decode a Morse code character, takes a string parameter, and return the corresponding character in uppercase (e.g. decode_char(".-") returns "A").
-
--Create a method to decode an entire word in Morse code, takes a string parameter, and return the string representation. Every character in a word will be separated by a single space (e.g. decode_word("-- -.--") returns "MY").
-
--Create a method to decode the entire message in Morse code, takes a string parameter, and return the string representation. Every word will be separated by 3 spaces 
+- Class Person
+- Class Student
+- Class Teacher
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,11 +140,6 @@ Example:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-👤 **Andrea Rivas**
-
-- GitHub: [@rivasbolinga](https://github.com/rivasbolinga)
-- LinkedIn: [Andrea Rivas](https://www.linkedin.com/in/andrearivaspalacios/)
 
 👤 **Safari Hamuli**
 
