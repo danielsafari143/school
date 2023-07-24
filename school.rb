@@ -17,16 +17,5 @@ class Person
   end
 end
 
-class Student < Person
-  def initialize(age, name = 'Unknown', parent_permission = true , classroom)
-    super(age , name , parent_permission)
-    @classroom = classroom
-  end
-
-  def play_hooky
-    "¯\(ツ)/¯"
-  end
-end
-
 daniel = Person.new(12)
 puts daniel.can_use_services?
