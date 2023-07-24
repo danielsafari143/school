@@ -6,31 +6,24 @@ class Person
     @parent_permission = parent_permission
   end
 
-  def id
-    @id
+  attr_accessor :id, :name, :age
+
+  private def of_age?
+    @age >= 18
   end
 
-  def name
-    @name
+  public def can_use_services?
+    (@age >= 18) or @parent_permission
   end
-  
-  def age
-    @age
-  end
-
-  def id=(id)
-    @id = id
-  end
-
-  def name=(name)
-    @name = name
-  end
-  
-  def age=(age)
-    @age = age
-  end
-
 end
 
+class Student < Person
+  def initialize(age, name = 'Unknown', parent_permission = true , classroom)
+    super(age , name , parent_permission)
+    @classroom = classroom
+  end
+end
+
+
 daniel = Person.new(12)
-puts daniel.name=("saejkau327iehahgdkaj")
+puts daniel.can_use_services?
