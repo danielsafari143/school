@@ -28,6 +28,5 @@ class Student < Person
   end
 end
 
-
 daniel = Person.new(12)
 puts daniel.can_use_services?
