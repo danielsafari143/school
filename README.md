@@ -5,7 +5,7 @@
   
   <br/>
 
-  <h3><b>DECODE MORSE </b></h3>
+  <h3><b>SCHOOL LIBRARY </b></h3>
 
 </div>
 
@@ -31,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 DECODE MORSE <a name="about-project"></a>
+# 📖 SCHOOL LIBRARY <a name="about-project"></a>
 
 This project is a school library management system that allows students and teachers to borrow and return books. It is implemented in Ruby and uses object-oriented programming principles.
 
