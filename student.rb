@@ -1,4 +1,4 @@
-require 'school'
+require_relative 'person'
 
 class Student < Person
   def initialize(age, name = 'Unknown', parent_permission = true, classroom)
@@ -10,3 +10,7 @@ class Student < Person
     '¯(ツ)/¯'
   end
 end
+
+student = Student.new(23, 'daniel', true, 'Terminal')
+puts student.name = ('John Doe')
+puts student.id

@@ -1,4 +1,4 @@
-require 'school'
+require_relative 'person'
 
 class Teacher < Person
   def initialize(age, name = 'Unknown', parent_permission = true, specialization)
@@ -10,3 +10,7 @@ class Teacher < Person
     true
   end
 end
+
+teacher = Teacher.new(23, 'daniel', true, 'Biology')
+puts teacher.name = ('John Doe')
+puts teacher.id
