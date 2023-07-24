@@ -8,14 +8,15 @@ class Person
 
   attr_accessor :id, :name, :age
 
-  private def of_age?
-    @age >= 18
-  end
 
-  public def can_use_services?
+
+  def can_use_services?
     (@age >= 18) or @parent_permission
   end
-end
 
-daniel = Person.new(12)
-puts daniel.can_use_services?
+  private
+
+  def of_age?
+    @age >= 18
+  end
+end
