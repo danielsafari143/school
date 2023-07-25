@@ -1,4 +1,6 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
   def initialize(age, name: 'Unknown', parent_permission: true)
     @id = ''
     @age = age
@@ -11,6 +13,10 @@ class Person
 
   def can_use_services?
     (@age >= 18) or @parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   private
