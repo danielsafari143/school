@@ -1,5 +1,4 @@
 require_relative 'decorator'
-require_relative 'person'
 
 class CapitalizeDecorator < Decorator
   def correct_name
