@@ -15,10 +15,3 @@ class Book
     rentals.push(rental)
   end
 end
-
-book = Book.new('CodeGame', 'Safari Hamuli')
-student = Student.new(23, 'Terminal', 'daniel', true)
-rent = Rental.new(Date.today, book, student)
-rents = Rental.new(Date.today, book, student)
-
-puts student.rental
