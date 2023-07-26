@@ -18,11 +18,3 @@ class Student < Person
     classroom.student.push(self) unless classroom.student.include?(self)
   end
 end
-
-student = Student.new(23, 'Terminal', 'daniel', true)
-classroom = Classroom.new('Biology')
-classroom.add_student(student)
-classroom.add_student(student)
-classroom.add_student(Student.new(23, 'Terminal', 'daniel', false))
-
-puts classroom.student
