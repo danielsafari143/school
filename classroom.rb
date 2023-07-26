@@ -14,11 +14,3 @@ class Classroom
     student.classroom = (label)
   end
 end
-
-clas = Classroom.new('MATH')
-student = Student.new(23, 'Biology', 'daniel', true)
-second = Student.new(218, 'Law', 'Rodrigue', true)
-clas.add_student(student)
-clas.add_student(second)
-
-puts student.classroom
