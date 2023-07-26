@@ -62,7 +62,6 @@ def create_book(data)
   print 'Author : '
   author = gets.chomp
   data['book'].push(Book.new(title, author))
-  puts data['book']
   puts 'Book created successfully'
 end
 

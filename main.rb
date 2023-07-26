@@ -1,17 +1,15 @@
 require_relative 'app'
 
-def split_method(data, choice)
-  case choice
-
+def split_method(data, index)
+  case index
   when '4'
-    create_book(data) if choice == '4'
+    create_book(data)
   when '5'
-    create_rental(data) if choice == '5'
-
+    create_rental(data)
   when '6'
-    list_rental(data) if choice == '6'
-  when '7'
-    exit_program if choice == '7'
+    list_rental(data)
+  else
+    exit_program
   end
 end
 
@@ -20,9 +18,9 @@ def methods(data)
 
   case choice
   when '1'
-    list_book(data) if choice == '1'
+    list_book(data)
   when '2'
-    list_people(data) if choice == '2'
+    list_people(data)
   when '3'
     print 'Do you want to create a student (1) or a teacher (2) [input the number] : '
     user = gets.chomp
