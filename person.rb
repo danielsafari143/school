@@ -9,10 +9,11 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rental = []
   end
 
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rental
 
   def can_use_services?
     (@age >= 18) or @parent_permission
@@ -20,6 +21,10 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def add_rental(rent)
+    @rental.push(rent)
   end
 
   private
