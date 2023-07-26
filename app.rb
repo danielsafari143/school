@@ -1,7 +1,9 @@
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'book'
+require_relative 'rental'
 
-data = { 'student' => [], 'teacher' => [] }
+data = { 'student' => [], 'teacher' => [], 'book' => [], 'rental' => [] }
 
 def create_user(knd, data)
   print 'Age : '
@@ -21,16 +23,36 @@ def create_user(knd, data)
   puts 'Person created successfully'
 end
 
+def create_book(data)
+  print 'Title : '
+  title = gets.chomp
+  print 'Author : '
+  author = gets.chomp
+  data['book'].push(Book.new(title, author))
+  puts data['book']
+end
 
-
-
-
-
-
-
-
-
-
+def create_rental(data)
+  local_student = data['student']
+  local_teacher = data['teacher']
+  local_book = data['book']
+  local_rental = data['rental']
+  people = local_student.concat(local_teacher)
+  puts 'Select a book from the following books by number'
+  local_book.each.with_index do |book, index|
+    puts "#{index}) Title: #{book.title} , Author: #{book.author}"
+  end
+  choice = gets.chomp
+  puts 'Select a person from the following list by number (not Id)'
+  people.each_with_index do |student, index|
+    puts "#{index}) [#{student.class.name}] Name : #{student.name} ID : #{student.id} Age : #{student.age}"
+  end
+  person = gets.chomp
+  print 'Date : '
+  date = gets.chomp
+  local_rental.push(Rental.new(date, local_book[choice.to_i], people[person.to_i]))
+  puts local_rental
+end
 
 def main(data)
   puts ''
@@ -49,6 +71,10 @@ def main(data)
     user = gets.chomp
     create_user(user, data)
   end
+
+  create_book(data) if choice == '4'
+  create_rental(data) if choice == '5'
+
   main(data)
 end
 
