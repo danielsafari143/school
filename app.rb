@@ -21,6 +21,19 @@ def list_people(data)
   end
 end
 
+def list_rental(data)
+    print "ID of person :"
+    ids = gets.chomp 
+    local_student = data['student']
+    local_teacher = data['teacher']
+    people = local_student.concat(local_teacher)
+    people.each_with_index do |student, index|
+      if student.id == ids.to_i
+        puts "#{index}) [#{student.class.name}] Name : #{student.name} ID : #{student.id} Age : #{student.age}"
+      end
+    end
+end
+
 def create_user(knd, data)
   print 'Age : '
   age = gets.chomp.to_i
@@ -94,7 +107,8 @@ def main(data)
 
   create_book(data) if choice == '4'
   create_rental(data) if choice == '5'
-
+  create_rental(data) if choice == '6'
+   
   main(data)
 end
 
