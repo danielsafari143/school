@@ -50,6 +50,9 @@ The system has three main classes: Person, Student, and Teacher. The Person clas
 - Class Person
 - Class Student
 - Class Teacher
+- class book
+- class main
+- Basic ui
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
