@@ -12,4 +12,5 @@ class Teacher < Person
 end
 
 teacher = Teacher.new(23, 'Biology', 'daniel')
-puts teacher.name = ('John Doe')
+teacher.name = ('John Doe')
+puts teacher.correct_name
