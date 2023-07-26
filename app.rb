@@ -3,7 +3,6 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 
-data = { 'student' => [], 'teacher' => [], 'book' => [], 'rental' => [] }
 
 def list_book(data)
   local_book = data['book']
@@ -22,16 +21,21 @@ def list_people(data)
 end
 
 def list_rental(data)
-    print "ID of person :"
-    ids = gets.chomp 
-    local_student = data['student']
-    local_teacher = data['teacher']
-    people = local_student.concat(local_teacher)
-    people.each_with_index do |student, index|
-      if student.id == ids.to_i
-        puts "#{index}) [#{student.class.name}] Name : #{student.name} ID : #{student.id} Age : #{student.age}"
-      end
+  print 'ID of person :'
+  ids = gets.chomp
+  local_student = data['student']
+  local_teacher = data['teacher']
+  people = local_student.concat(local_teacher)
+
+  people.each_with_index do |student, _index|
+    next unless student.id == ids.to_i
+
+    puts 'Rentals: '
+    rent = student.rental
+    rent.each_with_index do |value, index|
+      puts "#{index}) Date: #{value.date}  Book #{value.book} by #{value.person}"
     end
+  end
 end
 
 def create_user(knd, data)
@@ -84,32 +88,7 @@ def create_rental(data)
   puts 'Rental created successfully'
 end
 
-def main(data)
-  puts ''
-  puts 'Please choose an option by entering a number'
-  puts '1 - List all books'
-  puts '2 - List all people'
-  puts '3 - Create a person'
-  puts '4 - Create a book'
-  puts '5 - Create a rental'
-  puts '6 - List all rentals for a given person Id'
-  puts '7 - Exit'
-  choice = gets.chomp
-
-  list_book(data) if choice == '1'
-  list_people(data) if choice == '2'
-
-  if choice == '3'
-    print 'Do you want to create a student (1) or a teacher (2) [input the number] : '
-    user = gets.chomp
-    create_user(user, data)
-  end
-
-  create_book(data) if choice == '4'
-  create_rental(data) if choice == '5'
-  create_rental(data) if choice == '6'
-   
-  main(data)
+def exit_program
+  puts 'Thank you for using this app'
+  exit
 end
-
-main(data)
