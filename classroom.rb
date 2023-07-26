@@ -1,5 +1,3 @@
-require_relative 'student'
-
 class Classroom
   attr_accessor :label
   attr_reader :student
@@ -11,6 +9,6 @@ class Classroom
 
   def add_student(student)
     @student.push(student)
-    student.classroom = (label)
+    student.add_classroom(self)
   end
 end

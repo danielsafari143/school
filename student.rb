@@ -1,4 +1,5 @@
 require_relative 'person'
+require_relative 'classroom'
 
 class Student < Person
   attr_accessor :classroom
@@ -11,8 +12,16 @@ class Student < Person
   def play_hooky
     '¯(ツ)/¯'
   end
+
+  def add_classroom(classroom)
+    @classroom = classroom
+  end
 end
 
 student = Student.new(23, 'Terminal', 'daniel', true)
-puts student.name = ('John Doe')
-puts student.id
+classroom = Classroom.new('Biology')
+classroom.add_student(student)
+classroom.add_student(student)
+classroom.add_student(student)
+
+puts classroom.student
