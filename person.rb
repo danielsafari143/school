@@ -1,4 +1,3 @@
-require "securerandom"
 require_relative 'nameable'
 require_relative 'capitlize_decorator'
 require_relative 'trimmer_decorator'
@@ -17,10 +16,7 @@ class Person < Nameable
   attr_reader :id, :rental
 
   def generate_id
-    random_number = rand(1000000000)
-    random_string = SecureRandom.hex(8)
-    id = random_number.to_s + random_string
-    return id
+    rand(1000)
   end
 
   def can_use_services?

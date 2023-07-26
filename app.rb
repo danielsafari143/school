@@ -5,6 +5,22 @@ require_relative 'rental'
 
 data = { 'student' => [], 'teacher' => [], 'book' => [], 'rental' => [] }
 
+def list_book(data)
+  local_book = data['book']
+  local_book.each.with_index do |book, index|
+    puts "#{index}) Title: #{book.title} , Author: #{book.author}"
+  end
+end
+
+def list_people(data)
+  local_student = data['student']
+  local_teacher = data['teacher']
+  people = local_student.concat(local_teacher)
+  people.each_with_index do |student, index|
+    puts "#{index}) [#{student.class.name}] Name : #{student.name} ID : #{student.id} Age : #{student.age}"
+  end
+end
+
 def create_user(knd, data)
   print 'Age : '
   age = gets.chomp.to_i
@@ -30,6 +46,7 @@ def create_book(data)
   author = gets.chomp
   data['book'].push(Book.new(title, author))
   puts data['book']
+  puts 'Book created successfully'
 end
 
 def create_rental(data)
@@ -51,7 +68,7 @@ def create_rental(data)
   print 'Date : '
   date = gets.chomp
   local_rental.push(Rental.new(date, local_book[choice.to_i], people[person.to_i]))
-  puts local_rental
+  puts 'Rental created successfully'
 end
 
 def main(data)
@@ -65,6 +82,9 @@ def main(data)
   puts '6 - List all rentals for a given person Id'
   puts '7 - Exit'
   choice = gets.chomp
+
+  list_book(data) if choice == '1'
+  list_people(data) if choice == '2'
 
   if choice == '3'
     print 'Do you want to create a student (1) or a teacher (2) [input the number] : '
