@@ -3,7 +3,6 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 
-
 def list_book(data)
   local_book = data['book']
   local_book.each.with_index do |book, index|
