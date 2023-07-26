@@ -1,10 +1,9 @@
 require_relative 'student'
 require_relative 'teacher'
 
-$student = []
-$teacher = []
+data = { 'student' => [], 'teacher' => [] }
 
-def create_user(knd)
+def create_user(knd, data)
   print 'Age : '
   age = gets.chomp.to_i
   print 'Name : '
@@ -13,20 +12,29 @@ def create_user(knd)
   if knd == '1'
     print 'Has parent permission? [Y/N] : '
     parent_permission = gets.chomp == 'y'
-    $student.push(Student.new(age, name, parent_permission))
-    puts $student
+    data['student'].push(Student.new(age, name, parent_permission))
   else
     print 'Specialization : '
     specialization = gets.chomp
-    $teacher.push(Teacher.new(age, name, specialization))
-    puts $teacher
+    data['teacher'].push(Teacher.new(age, name, specialization))
   end
   puts 'Person created successfully'
 end
 
-def main
+
+
+
+
+
+
+
+
+
+
+
+def main(data)
   puts ''
-  puts 'Please choose an option by entrring a number'
+  puts 'Please choose an option by entering a number'
   puts '1 - List all books'
   puts '2 - List all people'
   puts '3 - Create a person'
@@ -39,9 +47,9 @@ def main
   if choice == '3'
     print 'Do you want to create a student (1) or a teacher (2) [input the number] : '
     user = gets.chomp
-    create_user(user)
+    create_user(user, data)
   end
-  main
+  main(data)
 end
 
-main
+main(data)
