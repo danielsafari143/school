@@ -1,7 +1,7 @@
 require_relative 'person'
 
 class Teacher < Person
-  def initialize(age, specialization, name)
+  def initialize(age, name, specialization)
     super(age, name: name)
     @specialization = specialization
   end
@@ -10,7 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher = Teacher.new(23, 'Biology', 'daniel')
-teacher.name = ('John Doe')
-puts teacher.correct_name

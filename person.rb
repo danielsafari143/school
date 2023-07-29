@@ -5,7 +5,7 @@ require_relative 'trimmer_decorator'
 class Person < Nameable
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
-    @id = ''
+    @id = generate_id
     @age = age
     @name = name
     @parent_permission = parent_permission
@@ -14,6 +14,10 @@ class Person < Nameable
 
   attr_accessor :name, :age
   attr_reader :id, :rental
+
+  def generate_id
+    rand(1000)
+  end
 
   def can_use_services?
     (@age >= 18) or @parent_permission
